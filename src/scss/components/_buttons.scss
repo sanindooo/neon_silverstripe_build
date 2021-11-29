@@ -1,0 +1,174 @@
+.button {
+	@include text(1rem, 700);
+	display: inline-block;
+	padding: 1rem 2rem;
+	text-transform: uppercase;
+	line-height: 1;
+	text-align: center;
+	background: $base-color;
+	color: #fff;
+	text-shadow: none;
+
+	&--rounded {
+		border-radius: 2rem;
+	}
+
+	&--alt {
+		background: 0;
+		border: 2px solid $blue;
+		color: $blue;
+
+		@include hover-focus() {
+			background: $blue;
+			color: #fff;
+		}
+	}
+
+	&--icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include hover-focus() {
+			color: #fff;
+
+			svg {
+				fill: #fff;
+			}
+		}
+
+		svg {
+			height: 1rem;
+			width: 1rem;
+			margin: 0 0 0 .75rem;
+			color: $base-color;
+		}
+	}
+
+	&--arrow {
+		@include text(1rem, 700);
+		display: flex;
+		align-items: center;
+		padding: 1rem 0;
+		text-transform: none;
+		background: 0;
+		text-align: left;
+
+		@include wi-mq(lap) {
+			@include text(1.1rem, 700);
+		}
+
+		svg {
+			height: 1rem;
+			width: 1rem;
+			margin: 0 0 0 .75rem;
+			transition: margin .3s ease-in-out;
+		}
+
+		@include hover-focus() {
+			background: 0;
+
+			svg {
+				margin: 0 0 0 1rem;
+			}
+		}
+	}
+
+	&--dark {
+		color: $base-color;
+
+		@include hover-focus() {
+			color: $blue;
+
+			svg {
+				fill: $blue;
+			}
+		}
+
+		svg {
+			fill: $base-color;
+		}
+	}
+
+	&--orange {
+		background: $orange;
+
+		@include hover-focus() {
+			background: darken($orange, 5%);
+		}
+
+		svg {
+			fill: #fff;
+		}
+	}
+
+	&--blue {
+		background: $blue;
+
+		@include hover-focus() {
+			background: darken($blue, 5%);
+		}
+	}
+
+	&--transparent {
+		background: 0;
+		border: 2px solid $base-color;
+		color: $base-color;
+
+		@include hover-focus() {
+			background: $base-color;
+		}
+	}
+
+	&--lg {
+
+		@include wi-mq(lap) {
+			@include text(1.2rem, 700);
+		}
+	}
+
+	&--gallery {
+		width: 100%;
+
+		@include wi-mq(lap) {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin: 0 3rem 1.5rem 0;
+			width: auto;
+		}
+
+		svg {
+			fill: #fff;
+			margin: 0 1rem 0 0;
+			height: 1.5rem;
+			width: 1.5rem;
+		}
+	}
+}
+
+.add-button {
+	@include text(1rem, 700);
+	display: flex;
+	align-items: center;
+	line-height: 1;
+	margin: 0 0 3rem;
+
+	@include hover-focus() {
+		color: $blue;
+	}
+
+	&__icon {
+		@include text(.9rem, 700);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 1.25rem;
+		width: 1.25rem;
+		background: $blue;
+		color: #fff;
+		border-radius: 2rem;
+		border: 1px solid $blue;
+		margin: 0 .75rem 0 0;
+	}
+}

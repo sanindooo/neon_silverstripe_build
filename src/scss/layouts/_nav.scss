@@ -1,0 +1,137 @@
+.nav {
+	margin: .5rem 0 1.5rem;
+	width: 100%;
+	border-radius: .5rem;
+	overflow: hidden;
+
+	@include wi-mq(lap) {
+		margin: 0 -.5rem;
+		width: auto;
+		border-radius: 0;
+		overflow: visible;
+	}
+
+	@include wi-mq(widescreen) {
+		margin: 0;
+	}
+
+	&-wrap {
+		display: none;
+		flex-wrap: wrap;
+
+		@include wi-mq(lap) {
+			display: flex;
+			flex-wrap: nowrap;
+			width: 100%;
+		}
+
+		@include wi-mq(desk) {
+			width: auto;
+		}
+
+		&.is-active {
+			display: flex;
+		}
+
+		.button {
+			@include text(.9rem, 700);
+			border-radius: .5rem;
+
+			@include wi-mq(lap) {
+				border-radius: 2rem;
+				padding: .75rem 1.25rem;
+			}
+
+			@include wi-mq(widescreen) {
+				@include text(1rem, 700);
+				padding: 1rem 1.5rem;
+			}
+
+			&.is-active {
+				background: $base-color;
+				color: #fff;
+
+				svg {
+					fill: #fff;
+				}
+			}
+		}
+	}
+
+	&-btn {
+		@include text(1rem, 700);
+		color: $base-color;
+		border: 2px solid $base-color;
+		border-radius: .5rem;
+		padding: .75rem;
+
+		@include wi-mq(lap) {
+			display: none;
+		}
+
+		.close {
+			display: none;
+		}
+
+		&.is-active {
+			border: 2px solid $blue;
+			background: $blue;
+			color: #fff;
+
+			.open {
+				display: none;
+			}
+
+			.close {
+				display: block;
+			}
+		}
+	}
+
+	&__item {
+		width: 100%;
+		border-bottom: 2px solid #fff;
+
+		&:last-of-type {
+			border: 0;
+		}
+
+		@include wi-mq(lap) {
+			width: auto;
+			border: 0;
+		}
+	}
+
+	&__link {
+		width: 100%;
+		display: block;
+		padding: 1rem 1.5rem;
+		@include text(.9rem, 700);
+		font-family: $title-font-family;
+		text-transform: uppercase;
+		background: $blue;
+		color: #fff;
+
+		@include wi-mq(lap) {
+			padding: 1.5rem .5rem;
+			background: 0;
+			color: $base-color;
+		}
+
+		@include wi-mq(desk) {
+			padding: 2.5rem .5rem;
+		}
+
+		@include wi-mq(widescreen) {
+			padding: 4rem .75rem;
+		}
+
+		@include wi-mq(widescreen-4k) {
+			font-size: 1rem;
+		}
+
+		@include hover-focus() {
+			color: $blue;
+		}
+	}
+}

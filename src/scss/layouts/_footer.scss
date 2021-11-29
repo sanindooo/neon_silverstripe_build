@@ -1,0 +1,68 @@
+.site-footer {
+	position: relative;
+	background: $base-color;
+	color: #fff;
+	padding: 4rem 0 2rem;
+
+	@include wi-mq(lap) {
+		padding: 8rem 0 4rem;
+	}
+
+	&__title {
+		@include text(.9rem, 700);
+		color: $orange;
+		text-transform: uppercase;
+		margin: 0 0 2rem;
+		letter-spacing: 1px;
+	}
+
+	&__item {
+		margin: 1rem 0;
+	}
+
+	&__link {
+		@include text(.9rem);
+		display: block;
+
+		@include hover-focus() {
+			text-decoration: underline;
+		}
+	}
+
+	.social {
+
+		&__link {
+			display: block;
+
+			@include hover-focus() {
+
+				svg {
+
+					path {
+						fill: $orange;
+					}
+				}
+			}
+
+			svg {
+				height: 1rem;
+				width: 1rem;
+			}
+		}
+	}
+}
+
+.copyright {
+	@include text(.85rem);
+
+	&__item {
+		margin: 0 .25rem 0 0;
+	}
+
+	&__link {
+
+		@include hover-focus() {
+			text-decoration: underline;
+		}
+	}
+}

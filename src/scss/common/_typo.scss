@@ -1,0 +1,145 @@
+/*! purgecss start ignore */
+h1, h2, h3, h4, h5, h6 {
+	font-family: $title-font-family;
+	line-height: 1.15;
+}
+
+h2 {
+	font-size: 1.6rem;
+
+	@include wi-mq(desk) {
+		font-size: 1.8rem;
+	}
+}
+
+h3 {
+	font-size: 1.4rem;
+
+	@include wi-mq(desk) {
+		font-size: 1.6rem;
+	}
+}
+
+h4 {
+	font-size: 1.2rem;
+
+	@include wi-mq(desk) {
+		font-size: 1.4rem;
+	}
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.typo {
+	width: 100%;
+	font-size: 1rem;
+
+	& * {
+		margin: 1rem 0;
+	}
+
+	&--lg {
+
+		@include wi-mq(lap) {
+			font-size: 1.1rem;
+		}
+	}
+
+	&--xl {
+
+		@include wi-mq(lap) {
+			font-size: 1.2rem;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.5;
+		margin: 1.5rem 0;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.3rem;
+	}
+
+	p {
+		line-height: 1.5;
+	}
+
+	a {
+		color: $blue;
+		word-wrap: break-word;
+		text-decoration: underline;
+
+		@include hover-focus() {
+			text-decoration: none;
+		}
+	}
+
+	blockquote {
+		font-weight: 500;
+		padding: 0 1.5rem;
+	}
+
+	ul, ol {
+		padding: 0 0 0 1rem;
+		margin: 1.5rem 0;
+		text-align: left;
+
+		li {
+			margin: .5rem 0;
+		}
+	}
+
+	ul {
+		list-style: none;
+
+		li {
+			position: relative;
+			line-height: 1.5;
+
+			&:before {
+				content: "\2022";
+				color: inherit;
+				display: inline-block;
+				font-weight: 700;
+				width: 1rem;
+				margin: 0 0 0 -1rem;
+			}
+		}
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	figure {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		height: 0;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+
+	.blue-title {
+		color: $blue;
+	}
+
+	.instagram-media {
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+/*! purgecss end ignore */

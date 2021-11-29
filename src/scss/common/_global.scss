@@ -1,0 +1,112 @@
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: $base-font-family;
+	position: relative;
+	overflow-x: hidden;
+	min-width: 320px;
+	min-height: 100vh;
+	background: #fff;
+	color: $base-color;
+	margin: 0;
+	font-weight: 400;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	flex-grow: 1;
+	min-height: 1px;
+}
+
+.no-scroll {
+	width: 100vw;
+	position: fixed;
+	overflow: hidden;
+}
+
+.preload *,
+.no-transition * {
+	transition: none !important;
+}
+
+.z-1 {
+	z-index: 1;
+}
+
+.z-2 {
+	z-index: 2;
+}
+
+.bg-white {
+	background: #fff;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.infographic {
+    max-width: 250px;
+}
+
+.active-tab {
+    color: rgb(190, 24, 93);
+    border-bottom: solid 3px rgb(190, 24, 93);
+}
+
+.wave-border--top:after {
+    position: absolute;
+    content: '';
+    height: 2rem;
+    transform: rotateX(180deg);
+    top: -1rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-image: url("./public/img/wave-fill.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.wave-border--bottom:before {
+    position: absolute;
+    content: '';
+    height: 2rem;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-image: url("./public/img/wave-fill.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.wave-border--hero:before {
+    position: absolute;
+    content: '';
+    height: 7rem;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-image: url("./public/img/wave-fill.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}

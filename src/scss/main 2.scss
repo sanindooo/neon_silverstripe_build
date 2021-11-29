@@ -1,0 +1,35 @@
+@charset "utf-8";
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ */
+
+@tailwind base;
+
+/** Import variables */
+@import 'common/variables';
+
+/** Import common */
+@import 'common/breakpoints';
+@import 'common/mixins';
+@import 'common/global';
+@import 'common/typo';
+@import 'common/video-wrapper';
+@import 'common/table';
+@import 'common/form';
+
+/**
+ * This injects any component classes registered by Tailwind plugins.
+ */
+@tailwind components;
+
+@import 'thirdparty/*';
+@import 'components/*';
+@import 'layouts/**/*';
+@import 'pages/*';
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ */
+@tailwind utilities;

@@ -1,0 +1,54 @@
+/*
+ * Breakpoints
+ */
+
+$breakpoints: (
+	"stamp":			"screen and (max-width: 375px)",
+	"thumb":       		"screen and (min-width: 640px)", //sm - tailwind
+	"up-to-lap":       	"screen and (max-width: 767px)", //md - tailwind
+	"lap":       		"screen and (min-width: 768px)", //md - tailwind
+	"desk":       		"screen and (min-width: 1024px)", //lg - tailwind
+	"widescreen":       "screen and (min-width: 1280px)", //xl - tailwind
+	"widescreen-4k":	"screen and (min-width: 1536px)", //2xl - tailwind
+);
+
+@mixin wi-mq($alias) {
+
+	// Search breakpoint map for alias
+	$query: map-get($breakpoints, $alias);
+
+	// If alias exists, print out media query
+	@if $query {
+		@media #{$query} {
+			@content;
+		}
+	}
+
+	@else {
+		@error "No breakpoint found for #{$alias}";
+	}
+}
+
+body {
+	&::before {
+		content: "thumb";
+		display: none;
+		visibility: hidden;
+
+		@include wi-mq(lap) {
+			content: "lap";
+		}
+
+		@include wi-mq(desk) {
+			content: "desk";
+		}
+
+		@include wi-mq(widescreen) {
+			content: "widescreen";
+		}
+
+		@include wi-mq(widescreen-4k) {
+			content: "widescreen-4k";
+		}
+	}
+}
